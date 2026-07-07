@@ -750,16 +750,17 @@ function mergeOverrides(overridesById){
   DATA.forEach(d => { if(!d.status) d.status = (d.photos && d.photos.length) ? 'full' : 'partial'; });
 }
 function onDataChanged(){
+  // 1. Aholini hisoblashni ENG TEPAGA qo'yamiz (xarita yuklanishini kutmasligi uchun)
+  const totalPop = DATA.reduce((sum, m) => sum + (Number(m.population) || 0), 0);
+  const popBadge = document.getElementById('total-pop-badge');
+  if(popBadge) popBadge.textContent = "👥 " + totalPop.toLocaleString('ru-RU');
+
+  // 2. Qolgan ishlar xarita tayyor bo'lgach bajariladi
   if(!map) return;
   DATA.forEach(m => refreshMarker(m.id));
   buildMfyList(); updateMfyLabel();
   applyFilters();
   if(activeId) renderDetail();
-
-  // Tumanning jami aholisini hisoblash va ekranga chiqarish
-  const totalPop = DATA.reduce((sum, m) => sum + (Number(m.population) || 0), 0);
-  const popBadge = document.getElementById('total-pop-badge');
-  if(popBadge) popBadge.textContent = "👥 " + totalPop.toLocaleString('ru-RU');
 }
 function loadData(cb){
   if(FIREBASE_ENABLED){
