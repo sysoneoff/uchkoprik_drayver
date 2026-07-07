@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
 <title>SysOne — Admin | Uchko'prik tumani</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -244,7 +245,7 @@ input,select,textarea{font-family:inherit;}
    Kirish faqat Telegram tasdiqlash kodi orqali (+998 20 021 08 91 egasiga yuboriladi).
    ===================================================================== */
 
-const LOGO_URL = ""; // foydalanuvchi saytidagi bilan bir xil havolani qo'ying
+const LOGO_URL = "logo.svg"; // foydalanuvchi saytidagi bilan bir xil havolani qo'ying
 function applyBrandMarks(){
   if(!LOGO_URL) return;
   document.querySelectorAll('.brand-mark').forEach(el => { el.classList.remove('fallback'); el.innerHTML = `<img src="${LOGO_URL}" alt="SysOne">`; });
