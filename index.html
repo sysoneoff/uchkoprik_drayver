@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
 <title>Uchko'prik tumani — Driver</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
 <meta name="description" content="Uchko'prik tumani 51 MFY interaktiv xaritasi — SysOne Digital Solutions">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
@@ -567,7 +568,7 @@ html[data-theme="light"] .dc-cover{background:linear-gradient(135deg,#dfe2f2,#ee
 // (yuklanish ekrani, menyu, "Haqida") avtomatik ishlatiladi.
 // Bo'sh qoldirilsa, "S" harfli standart belgi ko'rsatiladi.
 // ---------------------------------------------------------------
-const LOGO_URL = ""; // masalan: "https://.../logo.png"
+const LOGO_URL = "logo.svg"; // masalan: "https://.../logo.png"
 function applyBrandMarks(){
   if(!LOGO_URL) return;
   document.querySelectorAll('.brand-mark').forEach(el => {
